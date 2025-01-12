@@ -59,3 +59,29 @@
 // console.log(sum);
 
 
+
+//TODO: 5 ===================================
+//* Конструкція switch
+// Запитай користувача у модальному вікні, який з напоїв він бажає придбати - "Кава", "Чай" чи "Сік",
+// та залежно від виду напою оголоси суму досплати.Використовувати switch.
+
+const drink = prompt("oberitj napij")
+function orderDrink(drink) {
+    let price = 0;
+    switch (drink) {
+        case "kava":
+            price = 60;
+            break
+         case "chai":
+            price = 30;
+            break
+         case "sik":
+            price = 50;
+            break
+        default:
+            alert ("error")
+    }
+    return alert(`sum: ${price}UAH`)
+    
+}
+orderDrink(drink);
