@@ -129,7 +129,6 @@
 // }
 // console.log(calcSalaries(salaries));
 
-
 /**
  *? Напишіть ф-цію calcTotalPrice(stones, stonesName),
  *? яка приймає масив об'єктів та
@@ -138,21 +137,48 @@
  *? з таким ім'ям, ціною та кількістю з об'єкта
  */
 
-const stones = [
-  { name: "Смарагд", price: 1300, quantity: 4 },
-  { name: "Діамант", price: 2700, quantity: 6 },
-  { name: "Сапфір", price: 400, quantity: 7 },
-  { name: "Щебінь", price: 150, quantity: 100 },
-];
+// const stones = [
+//   { name: "Смарагд", price: 1300, quantity: 4 },
+//   { name: "Діамант", price: 2700, quantity: 6 },
+//   { name: "Сапфір", price: 400, quantity: 7 },
+//   { name: "Щебінь", price: 150, quantity: 100 },
+// ];
 
-function calcTotalPrice(stones, stonesName) {
-	for (const stone of stones) {
-		if (stone.name === stonesName) {
-			return stone.price * stone.quantity;
-		} 
-	}
-	return `Каменю ${stonesName} не існує!`;
-}
+// function calcTotalPrice(stones, stonesName) {
+// 	for (const stone of stones) {
+// 		if (stone.name === stonesName) {
+// 			return stone.price * stone.quantity;
+// 		}
+// 	}
+// 	return `Каменю ${stonesName} не існує!`;
+// }
 
-console.log(calcTotalPrice(stones, "Діамант"));
-console.log(calcTotalPrice(stones, "Гравій"));
+// console.log(calcTotalPrice(stones, "Діамант"));
+// console.log(calcTotalPrice(stones, "Гравій"));
+
+// Створіть об'єкт calculator із трьома методами
+// read(a, b) - приймає два аргументи та зберігає їх
+// як властивості об'єкта
+// sum() повертає суму збережених значень
+// multiply() перемножує збережені значення та повертає результат
+
+
+const calculator = {
+  read(a, b) {
+    this.val1 = a;
+    this.val2 = b;
+  },
+  sum() {
+    return this.val1 + this.val2;
+  },
+  multiply() {
+    return this.val1 * this.val2;
+  },
+};
+
+console.dir (calculator);
+calculator.read (2, 5);
+console.log (calculator.sum());
+console.log (calculator.multiply());
+
+console.dir (calculator);
