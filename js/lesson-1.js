@@ -209,20 +209,56 @@
 // console.log(groupedStudents);
 
 /**
- *? Напишіть функцію updateObject, яка приймає об'єкт робить копію та повертає
- *? новий об'єкт без вказаного параметра
- *? Очікуваний результат updateObject({a: 1, b: 2, c: 3}, 'b') {a: 1, c: 3}
- */
+//  *? Напишіть функцію updateObject, яка приймає об'єкт робить копію та повертає
+//  *? новий об'єкт без вказаного параметра
+//  *? Очікуваний результат updateObject({a: 1, b: 2, c: 3}, 'b') {a: 1, c: 3}
+//  */
 
-const obj = { a: 1, b: 2, c: 3 };
+// const obj = { a: 1, b: 2, c: 3 };
 
-const updateObject = (objCopy, key) => {
-  console.log(objCopy, key);
-  const copyObject = { ...objCopy };
-  delete copyObject[key];
-  return copyObject;
-};
+// const updateObject = (objCopy, key) => {
+//   console.log(objCopy, key);
+//   const copyObject = { ...objCopy };
+//   delete copyObject[key];
+//   return copyObject;
+// };
 
-console.log(updateObject(obj, 'a'));
+// console.log(updateObject(obj, 'a'));
 
-console.log(obj);
+// console.log(obj);
+
+// Vladyslav Apelhants
+// 16:24
+// *? Зробіть знижку 20% на всі фрукти у масиві
+// *? Надайте ід для кожного продукту
+
+const fruits = [
+  { name: 'apple', price: 200 },
+  { name: 'orange', price: 300 },
+  { name: 'grapes', price: 750 },
+];
+
+function calcProductPrice(fruitArray) {
+  const massFruits = [];
+
+  //   for (const fruit of fruitArray) {
+  //     const copyFruit = { ...fruit };
+  //     copyFruit.price *= 0.8;
+  //     copyFruit.id = `id-${Date.now().toString(36)}-${Math.random()
+  //       .toString(36)
+  //       .slice(2)}`;
+  //     massFruits.push(copyFruit);
+
+  for (const fruit of fruitArray) {
+    const id = `id-${Date.now().toString(36)}-${Math.random()
+      .toString(36)
+      .slice(2)}`;
+
+    massFruits.push({ ...fruit, price: fruit.price * 0.8, id });
+  }
+  return massFruits;
+}
+
+calcProductPrice(fruits);
+
+console.log(calcProductPrice(fruits));
