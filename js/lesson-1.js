@@ -162,7 +162,6 @@
 // // sum() повертає суму збережених значень
 // // multiply() перемножує збережені значення та повертає результат
 
-
 // const calculator = {
 //   read(a, b) {
 //     this.val1 = a;
@@ -182,8 +181,6 @@
 // console.log (calculator.multiply());
 // console.dir (calculator);
 
-
-
 // Угруповання об'єктів за якістю
 // Створіть масив об'єктів, що являють собою різних студентів. Кожен об'єкт повинен містити властивості ім'я, вік та курс. Використовуйте цикл for...of, щоб згрупувати студентів за курсами.
 // Результатом буде об'єкт, де ключами будуть назви курсів, а значення – масиви об'єктів студентів, що належать до відповідного курсу.
@@ -193,20 +190,39 @@
 //     { name: "Алиса", age: 20, course: "Java" },
 //     { name: "Карл",
 
-const students = [
-  { name: "Алиса", age: 20, course: "Java" },
-  { name: "Боб", age: 22, course: "Python" },
-  { name: "Карл", age: 21, course: "Java" },
-  { name: "Джон", age: 23, course: "JavaScript" },
-];
-const groupedStudents = {};
+// const students = [
+//   { name: "Алиса", age: 20, course: "Java" },
+//   { name: "Боб", age: 22, course: "Python" },
+//   { name: "Карл", age: 21, course: "Java" },
+//   { name: "Джон", age: 23, course: "JavaScript" },
+// ];
+// const groupedStudents = {};
 
-for (const student of students) {
-  if (
-  !groupedStudents[student.course]
-  ) {
-    groupedStudents[student.course] = [];
-  }
-  groupedStudents[student.course].push(student);
-}
-console.log(groupedStudents);
+// for (const student of students) {
+//   if (
+//   !groupedStudents[student.course]
+//   ) {
+//     groupedStudents[student.course] = [];
+//   }
+//   groupedStudents[student.course].push(student);
+// }
+// console.log(groupedStudents);
+
+/**
+ *? Напишіть функцію updateObject, яка приймає об'єкт робить копію та повертає
+ *? новий об'єкт без вказаного параметра
+ *? Очікуваний результат updateObject({a: 1, b: 2, c: 3}, 'b') {a: 1, c: 3}
+ */
+
+const obj = { a: 1, b: 2, c: 3 };
+
+const updateObject = (objCopy, key) => {
+  console.log(objCopy, key);
+  const copyObject = { ...objCopy };
+  delete copyObject[key];
+  return copyObject;
+};
+
+console.log(updateObject(obj, 'a'));
+
+console.log(obj);
