@@ -107,3 +107,24 @@ user.premium = false;
 for (const item of Object.keys(user)) {
   console.log(`${item} : ${user[item]}`);
 }
+
+// У нас є об'єкт, у якому зберігаються зарплати
+//    нашої команди
+//    Напишіть код для підсумовування всіх зарплат і
+//    збережіть його результат у змінній sum.
+//    Якщо об'єкт salaries порожній, то результат має бути 0
+
+const salaries = {
+  Mango: 100,
+  Poly: 160,
+  Ajax: 1470,
+};
+function calcSalaries(obj) {
+  let total = 0;
+  const salariesColection = Object.values(obj);
+  for (const sum of salariesColection) {
+    total += sum;
+  }
+  return total;
+}
+console.log(calcSalaries(salaries));
