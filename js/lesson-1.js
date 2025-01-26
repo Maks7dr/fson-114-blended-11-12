@@ -93,20 +93,20 @@
  *? ключ: значення використовуючи Object.keys() і for...of
  */
 
-const user = {
-  name: 'John',
-  age: 20,
-  hobby: 'tennis',
-  premium: true,
-};
+// const user = {
+//   name: 'John',
+//   age: 20,
+//   hobby: 'tennis',
+//   premium: true,
+// };
 
-user.mood = 'happy';
-user.hobby = 'skydiving';
-user.premium = false;
+// user.mood = 'happy';
+// user.hobby = 'skydiving';
+// user.premium = false;
 
-for (const item of Object.keys(user)) {
-  console.log(`${item} : ${user[item]}`);
-}
+// for (const item of Object.keys(user)) {
+//   console.log(`${item} : ${user[item]}`);
+// }
 
 // У нас є об'єкт, у якому зберігаються зарплати
 //    нашої команди
@@ -114,17 +114,45 @@ for (const item of Object.keys(user)) {
 //    збережіть його результат у змінній sum.
 //    Якщо об'єкт salaries порожній, то результат має бути 0
 
-const salaries = {
-  Mango: 100,
-  Poly: 160,
-  Ajax: 1470,
-};
-function calcSalaries(obj) {
-  let total = 0;
-  const salariesColection = Object.values(obj);
-  for (const sum of salariesColection) {
-    total += sum;
-  }
-  return total;
+// const salaries = {
+//   Mango: 100,
+//   Poly: 160,
+//   Ajax: 1470,
+// };
+// function calcSalaries(obj) {
+//   let total = 0;
+//   const salariesColection = Object.values(obj);
+//   for (const sum of salariesColection) {
+//     total += sum;
+//   }
+//   return total;
+// }
+// console.log(calcSalaries(salaries));
+
+
+/**
+ *? Напишіть ф-цію calcTotalPrice(stones, stonesName),
+ *? яка приймає масив об'єктів та
+ *? рядок під назвою каменю.
+ *? Функція сумує та повертає загальну вартість каменів
+ *? з таким ім'ям, ціною та кількістю з об'єкта
+ */
+
+const stones = [
+  { name: "Смарагд", price: 1300, quantity: 4 },
+  { name: "Діамант", price: 2700, quantity: 6 },
+  { name: "Сапфір", price: 400, quantity: 7 },
+  { name: "Щебінь", price: 150, quantity: 100 },
+];
+
+function calcTotalPrice(stones, stonesName) {
+	for (const stone of stones) {
+		if (stone.name === stonesName) {
+			return stone.price * stone.quantity;
+		} 
+	}
+	return `Каменю ${stonesName} не існує!`;
 }
-console.log(calcSalaries(salaries));
+
+console.log(calcTotalPrice(stones, "Діамант"));
+console.log(calcTotalPrice(stones, "Гравій"));
