@@ -6,7 +6,7 @@ const array = [1, 2, 3, 4, 5];
 const changeArray = arr => arr.map(number => Math.pow(number, 2));
 // return arr.map(number => number ** 2);
 
-console.log(changeArray(array));
+//console.log(changeArray(array));
 
 console.log('\n');
 
@@ -23,4 +23,24 @@ const flatArray = arr => {
   return arr.flatMap(item => item.values);
 };
 
-console.log(flatArray(data));
+//console.log(flatArray(data));
+
+//TODO:=========task-03=================
+// Дано масив об'єктів {name: "John", age: 27}, {name: "Jane", age: 31}, {name: "Bob", age: 19}. Перевірте, чи є хоча б один об'єкт з віком менше 20 років. Очікуваний результат: true.
+
+const people = [
+  { name: 'John', age: 27 },
+  { name: 'Jane', age: 31 },
+  { name: 'Bob', age: 19 },
+];
+
+const age = arr => arr.some(item => item.age < 20);
+
+//console.log(age(people));
+
+//TODO:=========task-04=================
+//  Дано масив чисел [2, 4, 6, 8, 10]. Перевірте, чи є кожен елемент масиву парним. Очікуваний результат: true.
+
+const numbers = [2, 4, 6, 8, 10];
+const arrayNumbers = arr => arr.every(number => number % 2 === 0);
+//console.log(arrayNumbers(numbers));
