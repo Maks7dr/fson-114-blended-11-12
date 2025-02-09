@@ -48,9 +48,9 @@ const age = arr => arr.some(item => item.age < 20);
 //TODO:=========task-05=================
 // Знайдіть перше непарне число
 
-const numbers = [2, 1, 6, 8, 9, 10, 12];
+// const numbers = [2, 1, 6, 8, 9, 10, 12];
 
-const firstFind = arr => arr.find(number => number % 2 !== 0); 
+const firstFind = arr => arr.find(number => number % 2 !== 0);
 
 // console.log(firstFind(numbers));
 
@@ -66,9 +66,31 @@ const sorterArr = arr => arr.toSorted((a, b) => a - b);
 //TODO:===============task-07===============================
 // Відсортуйте масив рядків ["banana", "orange", "apple", "pear"] у порядку алфавіту. Очікуваний результат: ["apple", "banana", "orange", "pear"].
 
-const fruits = ["banana", "orange", "apple", "pear"];
+const fruits = ['banana', 'orange', 'apple', 'pear'];
 
 const fruitSort = array => array.toSorted((a, b) => a.localeCompare(b));
 
 // console.log(fruitSort(fruits));
 
+//TODO:=========task-09=================
+// Дано масив об'єктів {name: "John", age: 27}, {name: "Jane", age: 31}, {name: "Bob", age: 19}. Створіть новий масив, що містить тільки об'єкти, в яких вік більше 20 років. Очікуваний результат: [{name: "John", age: 27}, {name: "Jane", age: 31}]
+const user = [
+  { name: 'John', age: 27 },
+  { name: 'Jane', age: 31 },
+  { name: 'Bob', age: 19 },
+];
+
+// const userFilter = arr => arr.filter(item => item.age > 20);
+
+// console.log(userFilter(user));
+
+//TODO:=========task-10=================
+// Дано масив чисел [1, 2, 3, 4, 5]. Застосуйте метод для обчислення суми елементів масиву
+
+// const numbers = [5, 2, 3, 4, 5];
+
+// const sum = arr => arr.reduce((acc, item) => (acc += item), 0);
+
+// console.log(sum(numbers));
+
+// console.log(user.map(item => item.name).toSorted((a, b) => a.localeCompare(b)));
