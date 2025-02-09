@@ -41,6 +41,34 @@ const age = arr => arr.some(item => item.age < 20);
 //TODO:=========task-04=================
 //  Дано масив чисел [2, 4, 6, 8, 10]. Перевірте, чи є кожен елемент масиву парним. Очікуваний результат: true.
 
-const numbers = [2, 4, 6, 8, 10];
-const arrayNumbers = arr => arr.every(number => number % 2 === 0);
+// const numbers = [2, 4, 6, 8, 10];
+// const arrayNumbers = arr => arr.every(number => number % 2 === 0);
 //console.log(arrayNumbers(numbers));
+
+//TODO:=========task-05=================
+// Знайдіть перше непарне число
+
+const numbers = [2, 1, 6, 8, 9, 10, 12];
+
+const firstFind = arr => arr.find(number => number % 2 !== 0); 
+
+// console.log(firstFind(numbers));
+
+//TODO:=========task-06=================
+// Відсортуйте масив чисел [4, 2, 5, 1, 3] у порядку зростання. Очікуваний результат: [1, 2, 3, 4, 5].
+
+const arrNum = [4, 2, 5, 1, 3];
+
+const sorterArr = arr => arr.toSorted((a, b) => a - b);
+// console.log(sorterArr(arrNum));
+// console.log(arrNum);
+
+//TODO:===============task-07===============================
+// Відсортуйте масив рядків ["banana", "orange", "apple", "pear"] у порядку алфавіту. Очікуваний результат: ["apple", "banana", "orange", "pear"].
+
+const fruits = ["banana", "orange", "apple", "pear"];
+
+const fruitSort = array => array.toSorted((a, b) => a.localeCompare(b));
+
+// console.log(fruitSort(fruits));
+
