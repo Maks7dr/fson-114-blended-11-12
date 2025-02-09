@@ -94,3 +94,145 @@ const user = [
 // console.log(sum(numbers));
 
 // console.log(user.map(item => item.name).toSorted((a, b) => a.localeCompare(b)));
+
+
+
+//TODO:=========task-01=================
+/**
+ * Створи клас для калькулятора, який має такі методи:
+ * - метод number, який набуває початкового значення для наступних операцій
+ * - метод getResult, який повертає фінальний результат усіх операцій, проведених із числом
+ * - методи add, substruct, divide, multiply
+ * Об'єкт класу може проводити послідовні операції у вигляді ланцюжка
+ */
+
+
+class Calculator {
+  
+  constructor() {
+    this.results = 0;
+  }
+  
+
+
+  number(num) {
+    this.results = num;
+    return this;
+  }
+
+  getResult() {
+    return this.results;
+  }
+
+  add(num) {
+    this.results += num;
+    return this;
+  }
+
+  substruct(num) {
+    this.results -= num;
+     return this;
+  }
+
+  divide(num) {
+    this.results /= num;
+     return this;
+  }
+
+  multiply(num) {
+    this.results *= num;
+     return this;
+  }
+
+
+}
+
+
+
+const calculator = new Calculator();
+
+const res = calculator.number(10).add(5).multiply(3).getResult();
+
+//  console.log(res);
+
+const calculator1 = new Calculator();
+
+const res1 = calculator1.number(20).substruct(5).divide(3).getResult();
+
+// console.log(res1);
+
+
+//TODO:=========task-02=================
+/**
+ * Напиши клас Client який створює об'єкт з ​​властивостями login email.
+ *
+ * Оголоси приватні властивості #login #email, 
+ * доступ до яких зроби через геттер та сеттер login email
+ */
+
+
+class Client {
+  #login;
+  #email;
+
+  constructor(login, email) {
+    this.#login = login;
+    this.#email = email;
+    
+  }
+
+  get getLogin() {
+    return this.#login;
+  }
+
+  set changeLogin(newLogin) {
+    this.#login = newLogin;
+  }
+
+  get getEmail() {
+    return this.#email;
+  }
+
+  set changeEmail(newEmail) {
+    this.#email = newEmail;
+  }
+}
+
+
+const client = new Client("Mango", "mango@gmail.com");
+client.changeLogin = "Alex";
+// console.log(client.getLogin);
+
+class Car {
+
+  constructor(name, engin) {
+    this.name = name;
+    this.engin = engin;
+  }
+
+  getInfo() {
+    return {name: this.name, engin: this.engin};
+  }
+
+  
+}
+
+const car = new Car("Aringo", "Disel");
+
+// console.log(car.getInfo());
+
+
+class Example extends Car {
+
+  constructor(color, year, name, engin) {
+    super(name, engin);
+    this.color = color;
+    this.year = year;
+    
+  }
+  
+}
+
+const example = new Example("red", "2021", "Aringo", "Disel");
+
+// console.log(example);
