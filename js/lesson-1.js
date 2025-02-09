@@ -261,4 +261,4 @@ function calcProductPrice(fruitArray) {
 
 calcProductPrice(fruits);
 
-console.log(calcProductPrice(fruits));
+//console.log(calcProductPrice(fruits));
