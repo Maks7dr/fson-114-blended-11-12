@@ -22,3 +22,9 @@
 input {
   margin-bottom: 50px;
 }
+.film-list {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  flex-wrap: wrap;
+}
