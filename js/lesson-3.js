@@ -95,8 +95,6 @@ const user = [
 
 // console.log(user.map(item => item.name).toSorted((a, b) => a.localeCompare(b)));
 
-
-
 //TODO:=========task-01=================
 /**
  * Створи клас для калькулятора, який має такі методи:
@@ -106,14 +104,10 @@ const user = [
  * Об'єкт класу може проводити послідовні операції у вигляді ланцюжка
  */
 
-
 class Calculator {
-  
   constructor() {
     this.results = 0;
   }
-  
-
 
   number(num) {
     this.results = num;
@@ -131,23 +125,19 @@ class Calculator {
 
   substruct(num) {
     this.results -= num;
-     return this;
+    return this;
   }
 
   divide(num) {
     this.results /= num;
-     return this;
+    return this;
   }
 
   multiply(num) {
     this.results *= num;
-     return this;
+    return this;
   }
-
-
 }
-
-
 
 const calculator = new Calculator();
 
@@ -161,15 +151,13 @@ const res1 = calculator1.number(20).substruct(5).divide(3).getResult();
 
 // console.log(res1);
 
-
 //TODO:=========task-02=================
 /**
  * Напиши клас Client який створює об'єкт з ​​властивостями login email.
  *
- * Оголоси приватні властивості #login #email, 
+ * Оголоси приватні властивості #login #email,
  * доступ до яких зроби через геттер та сеттер login email
  */
-
 
 class Client {
   #login;
@@ -178,7 +166,6 @@ class Client {
   constructor(login, email) {
     this.#login = login;
     this.#email = email;
-    
   }
 
   get getLogin() {
@@ -198,41 +185,33 @@ class Client {
   }
 }
 
-
-const client = new Client("Mango", "mango@gmail.com");
-client.changeLogin = "Alex";
+const client = new Client('Mango', 'mango@gmail.com');
+client.changeLogin = 'Alex';
 // console.log(client.getLogin);
 
 class Car {
-
   constructor(name, engin) {
     this.name = name;
     this.engin = engin;
   }
 
   getInfo() {
-    return {name: this.name, engin: this.engin};
+    return { name: this.name, engin: this.engin };
   }
-
-  
 }
 
-const car = new Car("Aringo", "Disel");
+const car = new Car('Aringo', 'Disel');
 
 // console.log(car.getInfo());
 
-
 class Example extends Car {
-
   constructor(color, year, name, engin) {
     super(name, engin);
     this.color = color;
     this.year = year;
-    
   }
-  
 }
 
-const example = new Example("red", "2021", "Aringo", "Disel");
+const example = new Example('red', '2021', 'Aringo', 'Disel');
 
 // console.log(example);
