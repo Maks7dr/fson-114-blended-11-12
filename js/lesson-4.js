@@ -96,3 +96,31 @@ watchedFilms.forEach(id => {
     filmEl.style.opacity = 0.5;
   }
 });
+
+filmListEl.addEventListener('click', event => {
+  if (event.target.nodeName !== 'IMG') {
+    return;
+  }
+
+  const modal = basicLightbox.create(`
+    <img src="${event.target.src}" width="1800" height="1100">
+`);
+
+  modal.show();
+
+  console.log(event.target);
+  console.log(event.currentTarget);
+});
+
+// const btnOpen = document.querySelector('.open-btn');
+// const btnClose = document.querySelector('.close-btn');
+// const modal = basicLightbox.create(`
+//     <img src="https://static.hdrezka.ac/i/2022/12/22/tc5e6b8212683gn66r84s.jpg" width="800" height="600">
+// `);
+// btnOpen.addEventListener('click', () => {
+//   modal.show();
+// });
+
+// btnClose.addEventListener('click', () => {
+//   modal.close();
+// });
