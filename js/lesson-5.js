@@ -1,10 +1,29 @@
-// console.log(localStorage);
+import refs from './refs.js';
+import {
+  addDataToLocalStorage,
+  getDataFromLocalStorag,
+} from './localstorage-api.js';
 
-// const number = 10;
-// localStorage.setItem('test', number);
+document.addEventListener('DOMContentLoaded', () => {
+  renderPage();
+});
 
-// console.log(JSON.parse(localStorage.getItem('test')));
+refs.checkBox.addEventListener('click', () => {
+  if (refs.checkBox.checked) {
+    refs.body.classList.replace('light', 'dark');
+    addDataToLocalStorage('switch', 'dark');
+  } else {
+    refs.body.classList.replace('dark', 'light');
+    addDataToLocalStorage('switch', 'light');
+  }
+});
 
-// localStorage.setItem('test2', JSON.stringify([1, 2, 3]));
-
-// console.log(JSON.parse(localStorage.getItem('test2')));
+function renderPage() {
+  const lsData = getDataFromLocalStorag('switch');
+  if (lsData === 'dark') {
+    refs.body.classList.replace('light', 'dark');
+    refs.checkBox.checked = true;
+  } else {
+    refs.body.classList.replace('dark', 'light');
+  }
+}

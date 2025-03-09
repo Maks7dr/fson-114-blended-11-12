@@ -1,4 +1,4 @@
-function addDataToLocalStorage(key, value) {
+export function addDataToLocalStorage(key, value) {
   try {
     const normalizeDate = JSON.stringify(value);
     localStorage.setItem(key, normalizeDate);
@@ -7,7 +7,7 @@ function addDataToLocalStorage(key, value) {
   }
 }
 
-function getDataFromLocalStorag(key) {
+export function getDataFromLocalStorag(key) {
   try {
     const lsDate = localStorage.getItem(key);
     return lsDate === null ? undefined : JSON.parse(lsDate);
@@ -16,7 +16,7 @@ function getDataFromLocalStorag(key) {
   }
 }
 
-function removeDateFromLocalStorage(key) {
+export function removeDateFromLocalStorage(key) {
   try {
     localStorage.removeItem(key);
   } catch (error) {
@@ -24,6 +24,6 @@ function removeDateFromLocalStorage(key) {
   }
 }
 
-function removeAllDate() {
+export function removeAllDate() {
   localStorage.clear();
 }
